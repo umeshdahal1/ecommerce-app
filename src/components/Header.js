@@ -16,13 +16,17 @@ const Header = () => {
     });
   });
   return (
-    <header className={`${isActive ? " bg-red-400" : " bg-blue-400"}`}>
+    <header
+      className={`${
+        isActive ? " bg-white py-4 shadow-md " : "bg-none py-4"
+      } fixed w-full z-10 transition-all `}
+    >
       <div className=" container mx-auto flex items-center justify-between h-full">
         {/* Logo */}
         <Link to={"/"}>
           <div>
             <img
-              className=" w-24"
+              className=" w-16"
               src="https://img.freepik.com/premium-vector/online-shop-logo-designs-concept-vector-online-store-logo-designs_7649-661.jpg?w=2000 "
               alt="logo"
             />
