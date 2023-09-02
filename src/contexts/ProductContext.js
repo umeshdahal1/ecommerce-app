@@ -1,9 +1,8 @@
-import React, {createContext, useState, useEffect} from 'react'
-
+import React, { createContext, useState, useEffect } from "react";
 
 export const ProductContext = createContext();
 
-export const ProductProvider = ({children}) => {
+export const ProductProvider = ({ children }) => {
   const [products, setProducts] = useState([]);
   useEffect(() => {
     const fetchProducts = async () => {
@@ -12,10 +11,12 @@ export const ProductProvider = ({children}) => {
       setProducts(data);
     };
     fetchProducts();
-  }, [])
+  }, []);
   return (
-    <ProductContext.Provider value={{products}}>{children}</ProductContext.Provider>
-  )
+    <ProductContext.Provider value={{ products }}>
+      {children}
+    </ProductContext.Provider>
+  );
 };
 
 export default ProductProvider;

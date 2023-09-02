@@ -12,11 +12,11 @@ const CartProvider = ({ children }) => {
 
   useEffect(() => {
     const total = cart.reduce((accumulator, currentItem) => {
-      return accumulator + currentItem.price * currentItem.amount
+      return accumulator + currentItem.price * currentItem.amount;
     }, 0);
-    setTotal(total)
-  }, [cart])
-  // Update item amount 
+    setTotal(total);
+  }, [cart]);
+  // Update item amount
   useEffect(() => {
     if (cart) {
       const amount = cart.reduce((accumulator, currentItem) => {
@@ -24,7 +24,7 @@ const CartProvider = ({ children }) => {
       }, 0);
       setItemAmount(amount);
     }
-  }, [cart])
+  }, [cart]);
 
   // Add to cart
   const addToCart = (product, id) => {
